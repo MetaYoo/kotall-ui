@@ -1,41 +1,112 @@
 [
   {
-    "iconClass": "icon-diamond",
-    "title": "UI Features",
-    "subIconClass": "arrow",
-    "sub_menu": [
+    "menuList": [
       {
-        "url": "ui_colors.html",
-        "title": "Color Library"
-      },
-      {
-        "url": "ui_general.html",
-        "title": "General Components",
-        "sub_menu": [
+        "iconClass": "icon-home",
+        "title": "仪表盘",
+        "subIconClass": "arrow",
+        "subMenu": [
           {
-            "url": "ui_page_progress_style_1.html",
-            "title": "Flash"
+            "iconClass": "icon-bar-chart",
+            "url": "ui_colors.html",
+            "title": " Dashboard 1"
           },
           {
-            "url": "ui_page_progress_style_2.html",
-            "title": "Big Counter"
+            "iconClass": "icon-bulb",
+            "url": "ui_general.html",
+            "title": " Dashboard 2"
           }
         ]
       }
     ]
   },
   {
-    "iconClass": "icon-puzzle",
-    "title": "Components",
-    "subIconClass": "arrow",
-    "sub_menu": [
+    "head": "系统管理",
+    "menuList": [
       {
-        "url": "ui_colors.html",
-        "title": "Color Library"
+        "iconClass": "icon-diamond",
+        "title": "权限管理",
+        "subIconClass": "arrow",
+        "subMenu": [
+          {
+            "url": "ui_colors.html",
+            "title": "Color Library"
+          },
+          {
+            "url": "ui_general.html",
+            "title": "General Components",
+            "sub_menu": [
+              {
+                "url": "ui_page_progress_style_1.html",
+                "title": "Flash"
+              },
+              {
+                "url": "ui_page_progress_style_2.html",
+                "title": "Big Counter"
+              }
+            ]
+          }
+        ]
       },
       {
-        "url": "ui_general.html",
-        "title": "General Components"
+        "iconClass": "icon-puzzle",
+        "title": "配置管理",
+        "subIconClass": "arrow",
+        "subMenu": [
+          {
+            "url": "ui_colors.html",
+            "title": "Color Library"
+          },
+          {
+            "url": "ui_general.html",
+            "title": "General Components"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "head": "系统功能",
+    "menuList": [
+      {
+        "iconClass": "icon-diamond",
+        "title": "商城管理",
+        "subIconClass": "arrow",
+        "subMenu": [
+          {
+            "url": "ui_colors.html",
+            "title": "Color Library"
+          },
+          {
+            "url": "ui_general.html",
+            "title": "General Components",
+            "sub_menu": [
+              {
+                "url": "ui_page_progress_style_1.html",
+                "title": "Flash"
+              },
+              {
+                "url": "ui_page_progress_style_2.html",
+                "title": "Big Counter"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "iconClass": "icon-puzzle",
+        "title": "微信管理",
+        "subIconClass": "arrow",
+        "subMenu": [
+          {
+            "url": "ui_colors.html",
+            "title": "Color Library"
+          },
+          {
+            "url": "ui_general.html",
+            "title": "General Components"
+          }
+        ]
       }
     ]
   }
