@@ -1,0 +1,42 @@
+[
+  {
+    "iconClass": "icon-diamond",
+    "title": "UI Features",
+    "subIconClass": "arrow",
+    "sub_menu": [
+      {
+        "url": "ui_colors.html",
+        "title": "Color Library"
+      },
+      {
+        "url": "ui_general.html",
+        "title": "General Components",
+        "sub_menu": [
+          {
+            "url": "ui_page_progress_style_1.html",
+            "title": "Flash"
+          },
+          {
+            "url": "ui_page_progress_style_2.html",
+            "title": "Big Counter"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "iconClass": "icon-puzzle",
+    "title": "Components",
+    "subIconClass": "arrow",
+    "sub_menu": [
+      {
+        "url": "ui_colors.html",
+        "title": "Color Library"
+      },
+      {
+        "url": "ui_general.html",
+        "title": "General Components"
+      }
+    ]
+  }
+]

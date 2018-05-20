@@ -2214,6 +2214,25 @@
         <script src="../../static/layouts/layout4/scripts/demo.min.js" type="text/javascript"></script>
         <script src="../../static/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
         <!-- END THEME LAYOUT SCRIPTS -->
+
+    <script type="text/javascript">
+         $.getJSON('../../data/menu.json', function (data) {
+             var menu = "";
+             console.log(data);
+             $.each(data, function (i, item) {
+                 var menu_item = "<a href=\"javascript:;\" class=\"nav-link nav-toggle\"><i class=\""+ item.iconClass +"\"></i><span class=\"title\">" + item.title + "</span><span class=\"" + item.subIconClass + "\"></span></a>\n";
+                 menu_item += "<ul class=\"sub-menu\">";
+                 $.each(item.sub_menu, function (j, sub) {
+                     menu_item += "<li class=\"nav-item\"><a href=\"" + sub.url + "\" class=\"nav-link\">" + sub.title + "</a></li>";
+                 })
+                 menu_item += "</ul>";
+                 menu += "<li class=\"nav-item\">" + menu_item +"</li>";
+             });
+
+             console.log(menu);
+         });
+
+    </script>
     </body>
 
 </html>
