@@ -1225,29 +1225,40 @@
         <script type="text/javascript">
             $.getJSON('../../data/menu.json', function (data) {
                 var menu = "";
+                // 遍历生成根菜单
                 $.each(data, function (p, root) {
-                    // heading
-                    if (root.head ) {
-                        menu += "<li class=\"heading \"><h3 class=\"uppercase \">" + root.head + "</h3></li>";
-                    }
+                    var menu_item = "<a href=\"javascript:;\" class=\"nav-link nav-toggle \"><i class=\""+ root.iconClass +" \"></i><span class=\"title\">" + root.title + "</span><span class=\"" + root.eventIconClass + " \"></span></a>\n";
+                    menu_item += "<ul class=\"sub-menu \">";
+                    // 遍历生成一级菜单
+                    $.each(root.subMenuList, function (i, firstLevel) {
+                        menu_item += "<li class=\"nav-item \">";
+                        menu_item += "<a href=\" " + firstLevel.url + "\" class=\"nav-link \">";
+                        if (firstLevel.iconClass) {
+                            menu_item += "<i class=\"" + firstLevel.iconClass +" \"></i>";
+                        }
 
-                    $.each(root.menuList, function (i, item) {
-                        var menu_item = "<a href=\"javascript:;\" class=\"nav-link nav-toggle \"><i class=\""+ item.iconClass +" \"></i><span class=\"title\">" + item.title + "</span><span class=\"" + item.subIconClass + " \"></span></a>\n";
-                        menu_item += "<ul class=\"sub-menu \">";
-                        $.each(item.subMenu, function (j, sub) {
-                            menu_item += "<li class=\"nav-item \"><a href=\"" + sub.url + "\" class=\"nav-link \">";
-                            if (sub.iconClass) {
-                                menu_item += "<i class=\"" + sub.iconClass +" \"></i>";
-                            }
-                            menu_item += "<span class=\"title\">" + sub.title + "</span></a></li>";
-                        })
-                        menu_item += "</ul>";
-                        menu += "<li class=\"nav-item\">" + menu_item +"</li>";
+                        menu_item += "<span class=\"title\">" + firstLevel.title + "</span>";
+                        if (firstLevel.eventIconClass) {
+                            menu_item += "<span class=\"" + firstLevel.eventIconClass+" \"></span>";
+                        }
+                        menu_item += "</a>";
+                        // 遍历生成二级菜单
+                        if (firstLevel.subMenuList) {
+                            menu_item += "<ul class=\"sub-menu\">";
+                            $.each(firstLevel.subMenuList, function (j, secondLevel) {
+                                menu_item += "<li class=\"nav-item \"><a href=\"" + secondLevel.url + "\" class=\"nav-link \">";
+                                menu_item += "<span class=\"title\">" + secondLevel.title + "</span></a></li>";
+                            })
+                            menu_item += "</ul>";
+                        }
+                        menu_item += "</li>";
+
                     });
+
+                    menu_item += "</ul>";
+                    menu += "<li class=\"nav-item\">" + menu_item +"</li>";
                 });
 
-
-                console.log(menu);
                 $("#menuList").append(menu);
             });
 
